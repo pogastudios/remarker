@@ -1,22 +1,29 @@
-﻿Filename: issues.txt
-Created:  Sep 17, 2014 08:31:52.765
-Modified: Aug 28, 2015
-Title:    YoderZone.Com.Extensions.Remarker
+﻿Changelog:
 
-Updates:
+1.5 [Nov 25, 2018] "Remarker/Marius", a fork of the original Remarker. Check out https://github.com/negrutiu/remarker
+  Updated to support Visual Studio 2017 (Community, Pro and Enterprise editions)
+  Fixed a stack overflow caused by a recursive reaction to our own changes
+  Fixed a potential crash caused by corrupted/invalid Remarker settings
+  Modified some default fonts and colors
 
-Aug 28, 2015:
+1.4 [Aug 28, 2015]
+  Updated to support Visual Studio 2015.
+  Includes minor updates to Options pages and other performance and organizational changes.
+  NLog logging has been removed to simplify code.
 
-	1.4		Updated to support Visual Studio 2015. Includes minor updates to Options pages and other performance and organizational changes. NLog logging has been removed to simplify code.
+Performance Issue:
 
-Issues
+- Some users may experience longer than expected wait times opening the Comments Setting options page.
+  The reason for this is that on some systems some fonts generate an Argument Exception
+  when a program queries whether the font supports the Regular style.
+  Instead of a negative response, an exception is raised.
 
-Performance Issue
+- The program now handles the exception, but the delay that is caused by the exception is several seconds.
+  If there are many such fonts, there would be an exception for each problem font.
 
-Some users may experience longer than expected wait times opening the Comments Setting options page. The reason for this is that on some systems some fonts generate an Argument Exception when a program queries whether the font supports the Regular style. Instead of a negative response, an exception is raised.
+- Sometimes deleting and re-installing the font will resolve this.
+  But sometimes the problem cannot be resolved unless the font is removed or replaced.
+  If the fonts are not used, it may be better just to remove the font altogether.
 
-The program now handles the exception, but the delay that is caused by the exception is several seconds. If there are many such fonts, there would be an exception for each problem font.
-
-Sometimes deleting and re-installing the font will resolve this. But sometimes the problem cannot be resolved unless the font is removed or replaced. If the fonts are not used, it may be better just to remove the font altogether.
-
-I have a small program in the troubleshooting section of my documentation at http://remarker.codeplex.com/ that can help identify the fonts that raise this exception.
+- I have a small program in the troubleshooting section of my documentation at http://remarker.codeplex.com/
+  that can help identify the fonts that raise this exception.
