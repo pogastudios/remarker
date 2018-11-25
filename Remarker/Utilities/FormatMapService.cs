@@ -50,6 +50,8 @@ internal sealed class FormatMapService : IDisposable
 
     private readonly RemarkerService service;
 
+    private bool bChangeInProgress;     // Prevent recursive changes resulting in stack overflow
+ 
     #endregion
 
     #region Constructors and Destructors
@@ -85,7 +87,10 @@ internal sealed class FormatMapService : IDisposable
         this.service = service;
         this.typeRegistry = typeRegistry;
 
+        bChangeInProgress = true;
         this.UpdateFormatDefinitions();
+        bChangeInProgress = false;
+
         textView.GotAggregateFocus += this.OnViewGotAggregateFocus;
         this.formatMap.ClassificationFormatMappingChanged +=
             this.FormatMapChanged;
@@ -137,14 +142,12 @@ internal sealed class FormatMapService : IDisposable
             return;
         }
 
-        bool isReentry = this.formatMap.IsInBatchUpdate;
+        if (this.formatMap.IsInBatchUpdate)
+            return;
 
         try
         {
-            if (!isReentry)
-            {
-                this.formatMap.BeginBatchUpdate();
-            }
+            this.formatMap.BeginBatchUpdate();
 
             foreach (var typeString in Definitions.ClassificationTypeStrings)
             {
@@ -234,10 +237,7 @@ internal sealed class FormatMapService : IDisposable
         }
         finally
         {
-            if (!isReentry && this.formatMap.IsInBatchUpdate)
-            {
-                this.formatMap.EndBatchUpdate();
-            }
+            this.formatMap.EndBatchUpdate();
         }
     }
 
@@ -252,8 +252,12 @@ internal sealed class FormatMapService : IDisposable
     /// </param>
     private void FormatMapChanged(object sender, EventArgs e)
     {
-
-        this.UpdateFormatDefinitions();
+        if (!bChangeInProgress)
+        {
+            bChangeInProgress = true;
+            this.UpdateFormatDefinitions();
+            bChangeInProgress = false;
+        }
     }
 
     /// <summary>
@@ -286,7 +290,9 @@ internal sealed class FormatMapService : IDisposable
             view.GotAggregateFocus -= this.OnViewGotAggregateFocus;
         }
 
+        bChangeInProgress = true;
         this.UpdateFormatDefinitions();
+        bChangeInProgress = false;
     }
 
     //! Updates a comment's configuration definition.
