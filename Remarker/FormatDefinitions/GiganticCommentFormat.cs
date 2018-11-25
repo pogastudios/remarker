@@ -44,7 +44,7 @@ public class GiganticCommentFormat : ClassificationFormatDefinition
     public GiganticCommentFormat()
     {
         this.DisplayName = "Remarker Comment - Gigantic (+++)";
-        this.IsBold = false;
+        this.IsBold = true;
         this.ForegroundColor = Resources.NormalCommentColor;
         this.ForegroundCustomizable = true;
         this.BackgroundCustomizable = false;

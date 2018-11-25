@@ -44,7 +44,7 @@ public class HugeCommentFormat : ClassificationFormatDefinition
     public HugeCommentFormat()
     {
         this.DisplayName = "Remarker Comment - Huge (++)";
-        this.IsBold = false;
+        this.IsBold = true;
         this.ForegroundColor = Resources.NormalCommentColor;
         this.ForegroundCustomizable = true;
         this.BackgroundCustomizable = false;
