@@ -354,24 +354,22 @@ namespace YoderZone.Extensions.Remarker.Service
                     this.FontFamily = value ?? "Verdana";
                     break;
                 case "GiganticFactor":
-                    this.GiganticFactor = float.TryParse(value, out floatResult) ? floatResult : 2f;
+                    this.GiganticFactor = float.TryParse(value, out floatResult) && floatResult < 10f ? floatResult : 2f;
                     break;
                 case "HugeFactor":
-                    this.HugeFactor = float.TryParse(value, out floatResult) ? floatResult : 1.6667f;
+                    this.HugeFactor = float.TryParse(value, out floatResult) && floatResult < 10f ? floatResult : 1.6667f;
                     break;
                 case "LargeFactor":
-                    this.LargeFactor = float.TryParse(value, out floatResult)
-                                           ? floatResult
-                                           : 1.3333f;
+                    this.LargeFactor = float.TryParse(value, out floatResult) && floatResult < 10f ? floatResult : 1.3333f;
                     break;
                 case "SmallFactor":
-                    this.SmallFactor = float.TryParse(value, out floatResult) ? floatResult : .85f;
+                    this.SmallFactor = float.TryParse(value, out floatResult) && floatResult < 10f ? floatResult : .85f;
                     break;
                 case "TinyFactor":
-                    this.TinyFactor = float.TryParse(value, out floatResult) ? floatResult : .70f;
+                    this.TinyFactor = float.TryParse(value, out floatResult) && floatResult < 10f ? floatResult : .70f;
                     break;
                 case "MicroFactor":
-                    this.MicroFactor = float.TryParse(value, out floatResult) ? floatResult : .55f;
+                    this.MicroFactor = float.TryParse(value, out floatResult) && floatResult < 10f ? floatResult : .55f;
                     break;
                 case "Task01":
                     this.Task01 = value ?? "Todo";
