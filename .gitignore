@@ -1,3 +1,9 @@
+.vs
+packages
+
+[Bb]in/
+[Oo]bj/
+
 Thumbs.db
 *.obj
 *.exe
@@ -17,12 +23,9 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
-[Bb]in
-[Dd]ebug*/
 *.lib
 *.sbr
-obj/
-[Rr]elease*/
+
 _ReSharper*/
 [Tt]est[Rr]esult*
 *.vssscc
