@@ -168,7 +168,7 @@ public static class Resources
     /// <summary>
     /// The normal question color.
     /// </summary>
-    public static readonly System.Windows.Media.Color NormalQuestionColor = Colors.Blue;
+    public static readonly System.Windows.Media.Color NormalQuestionColor = Colors.DodgerBlue;
 
     /// <summary>
     /// The normal strikeout color.
