@@ -351,6 +351,9 @@ internal sealed class FormatMapService : IDisposable
 
         // Update the font size.
         typeProperties = typeProperties.SetFontRenderingEmSize(fontSize);
+   
+        // Marius: Use default font family
+        /*
         string fontFamilyName = this.service.FontFamily;
 
         if (fontFamilyName != null)
@@ -358,6 +361,7 @@ internal sealed class FormatMapService : IDisposable
             // Update the font type.
             typeProperties = typeProperties.SetTypeface(new Typeface(fontFamilyName));
         }
+        */
 
         // Save the changes to the classification type.
         this.formatMap.SetTextProperties(formatType, typeProperties);
