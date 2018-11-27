@@ -21,7 +21,7 @@
     /// <seealso
     ///     cref="T:Microsoft.VisualStudio.Text.Classification.ClassificationFormatDefinition" />
     [Name(Definitions.Task05)]
-    [UserVisible(false)]
+    [UserVisible(true)]
     [Order(After = Priority.High)]
     [Export(typeof(EditorFormatDefinition))]
     [ClassificationType(ClassificationTypeNames = Definitions.Task05)]
@@ -44,9 +44,9 @@
                     throw new ArgumentNullException("service");
                 }
 
-                this.DisplayName = "Remarker Task05";
+                this.DisplayName = "Remarker - NOTE";
                 this.ForegroundColor = service.TaskColor05.ConvertStringToWpfColor();
-                this.FontTypeface = new Typeface(service.TaskTypeface05.Name);
+                //x this.FontTypeface = new Typeface(service.TaskTypeface05.Name);
                 this.IsBold = service.TaskBold05;
                 this.ForegroundCustomizable = true;
                 this.BackgroundCustomizable = true;

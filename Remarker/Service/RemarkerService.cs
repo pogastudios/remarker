@@ -432,19 +432,19 @@ namespace YoderZone.Extensions.Remarker.Service
                     this.TaskBold10 = !bool.TryParse(value, out boolResult) || boolResult;
                     break;
                 case "TaskColor01":
-                    this.TaskColor01 = value ?? "0000ff";
+                    this.TaskColor01 = value ?? "ff0000";   //++ TODO
                     break;
                 case "TaskColor02":
-                    this.TaskColor02 = value ?? "008000";
+                    this.TaskColor02 = value ?? "804000";   //++ HACK
                     break;
                 case "TaskColor03":
-                    this.TaskColor03 = value ?? "ff00d6";
+                    this.TaskColor03 = value ?? "FF8000";   //++ QUESTION
                     break;
                 case "TaskColor04":
-                    this.TaskColor04 = value ?? "ff0000";
+                    this.TaskColor04 = value ?? "ff0000";   //++ BUG
                     break;
                 case "TaskColor05":
-                    this.TaskColor05 = value ?? "8b0807";
+                    this.TaskColor05 = value ?? "A040C0";   //++ NOTE
                     break;
                 case "TaskColor06":
                     this.TaskColor06 = value ?? "000000";
