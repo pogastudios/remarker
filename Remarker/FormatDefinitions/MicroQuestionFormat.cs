@@ -47,7 +47,7 @@ public class MicroQuestionFormat : ClassificationFormatDefinition
         this.IsBold = false;
         this.ForegroundColor = Resources.NormalQuestionColor;
         this.ForegroundCustomizable = true;
-        this.BackgroundCustomizable = false;
+        this.BackgroundCustomizable = true;
     }
 
     #endregion

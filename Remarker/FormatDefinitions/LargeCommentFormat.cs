@@ -47,7 +47,7 @@ public class LargeCommentFormat : ClassificationFormatDefinition
         this.IsBold = true;
         this.ForegroundColor = Resources.NormalCommentColor;
         this.ForegroundCustomizable = true;
-        this.BackgroundCustomizable = false;
+        this.BackgroundCustomizable = true;
     }
 
     #endregion

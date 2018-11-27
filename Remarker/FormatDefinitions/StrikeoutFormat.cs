@@ -48,7 +48,7 @@ public class StrikeoutFormat : ClassificationFormatDefinition
         this.ForegroundColor = Resources.NormalStrikeoutColor;
         this.TextDecorations = System.Windows.TextDecorations.Strikethrough;
         this.ForegroundCustomizable = true;
-        this.BackgroundCustomizable = false;
+        this.BackgroundCustomizable = true;
     }
 
     #endregion

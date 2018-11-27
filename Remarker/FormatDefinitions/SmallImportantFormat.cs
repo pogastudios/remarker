@@ -47,7 +47,7 @@ public class SmallImportantFormat : ClassificationFormatDefinition
         this.IsBold = false;
         this.ForegroundColor = Resources.NormalImportantColor;
         this.ForegroundCustomizable = true;
-        this.BackgroundCustomizable = false;
+        this.BackgroundCustomizable = true;
     }
 
     #endregion
