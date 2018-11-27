@@ -325,29 +325,28 @@ namespace YoderZone.Extensions.Remarker.Service
             switch (valueName)
             {
                 case "IsLoggingEnabled":
-                    this.IsLoggingEnabled = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.IsLoggingEnabled = bool.TryParse(value, out boolResult) ? boolResult : false;
                     break;
                 case "IsNLogConfigLoggingEnabled":
-                    this.IsNLogConfigLoggingEnabled = bool.TryParse(value, out boolResult) &&
-                                                      boolResult;
+                    this.IsNLogConfigLoggingEnabled = bool.TryParse(value, out boolResult) ? boolResult : false;
                     break;
                 case "IsTraceEnabled":
-                    this.IsTraceEnabled = bool.TryParse(value, out boolResult) && boolResult;
+                    this.IsTraceEnabled = bool.TryParse(value, out boolResult) ? boolResult : false;
                     break;
                 case "IsDebugEnabled":
-                    this.IsDebugEnabled = bool.TryParse(value, out boolResult) && boolResult;
+                    this.IsDebugEnabled = bool.TryParse(value, out boolResult) ? boolResult : false;
                     break;
                 case "IsInfoEnabled":
-                    this.IsInfoEnabled = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.IsInfoEnabled = bool.TryParse(value, out boolResult) ? boolResult : false;
                     break;
                 case "IsWarnEnabled":
-                    this.IsWarnEnabled = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.IsWarnEnabled = bool.TryParse(value, out boolResult) ? boolResult : false;
                     break;
                 case "IsFatalEnabled":
-                    this.IsFatalEnabled = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.IsFatalEnabled = bool.TryParse(value, out boolResult) ? boolResult : false;
                     break;
                 case "IsErrorEnabled":
-                    this.IsErrorEnabled = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.IsErrorEnabled = bool.TryParse(value, out boolResult) ? boolResult : false;
                     break;
 
                 case "FontFamily":
@@ -402,34 +401,34 @@ namespace YoderZone.Extensions.Remarker.Service
                     this.Task10 = value ?? "";
                     break;
                 case "TaskBold01":
-                    this.TaskBold01 = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.TaskBold01 = bool.TryParse(value, out boolResult) ? boolResult : true;
                     break;
                 case "TaskBold02":
-                    this.TaskBold02 = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.TaskBold02 = bool.TryParse(value, out boolResult) ? boolResult : true;
                     break;
                 case "TaskBold03":
-                    this.TaskBold03 = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.TaskBold03 = bool.TryParse(value, out boolResult) ? boolResult : true;
                     break;
                 case "TaskBold04":
-                    this.TaskBold04 = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.TaskBold04 = bool.TryParse(value, out boolResult) ? boolResult : true;
                     break;
                 case "TaskBold05":
-                    this.TaskBold05 = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.TaskBold05 = bool.TryParse(value, out boolResult) ? boolResult : true;
                     break;
                 case "TaskBold06":
-                    this.TaskBold06 = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.TaskBold06 = bool.TryParse(value, out boolResult) ? boolResult : true;
                     break;
                 case "TaskBold07":
-                    this.TaskBold07 = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.TaskBold07 = bool.TryParse(value, out boolResult) ? boolResult : true;
                     break;
                 case "TaskBold08":
-                    this.TaskBold08 = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.TaskBold08 = bool.TryParse(value, out boolResult) ? boolResult : true;
                     break;
                 case "TaskBold09":
-                    this.TaskBold09 = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.TaskBold09 = bool.TryParse(value, out boolResult) ? boolResult : true;
                     break;
                 case "TaskBold10":
-                    this.TaskBold10 = !bool.TryParse(value, out boolResult) || boolResult;
+                    this.TaskBold10 = bool.TryParse(value, out boolResult) ? boolResult : true;
                     break;
                 case "TaskColor01":
                     this.TaskColor01 = value ?? "ff0000";   //++ TODO
