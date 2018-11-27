@@ -1,5 +1,11 @@
 ﻿Changelog:
 
+2.0 [Nov 27, 2018] "Remarker/Marius", a fork of the original Remarker. Check out https://github.com/negrutiu/remarker
+  Additional work to prevent stack overflows
+  Made all the background colors customizable
+  Exposed more settings: Todo, Hack, Question, Bug, Note
+  Other minor adjustments
+
 1.5 [Nov 25, 2018] "Remarker/Marius", a fork of the original Remarker. Check out https://github.com/negrutiu/remarker
   Updated to support Visual Studio 2017 (Community, Pro and Enterprise editions)
   Fixed a stack overflow caused by a recursive reaction to our own changes
