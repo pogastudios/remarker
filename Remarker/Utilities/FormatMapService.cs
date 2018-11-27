@@ -50,8 +50,6 @@ internal sealed class FormatMapService : IDisposable
 
     private readonly RemarkerService service;
 
-    private bool bChangeInProgress;     // Prevent recursive changes resulting in stack overflow
- 
     #endregion
 
     #region Constructors and Destructors
@@ -87,13 +85,10 @@ internal sealed class FormatMapService : IDisposable
         this.service = service;
         this.typeRegistry = typeRegistry;
 
-        bChangeInProgress = true;
         this.UpdateFormatDefinitions();
-        bChangeInProgress = false;
 
         textView.GotAggregateFocus += this.OnViewGotAggregateFocus;
-        this.formatMap.ClassificationFormatMappingChanged +=
-            this.FormatMapChanged;
+        this.formatMap.ClassificationFormatMappingChanged += this.FormatMapChanged;
         textView.Closed += this.OnViewClosed;
     }
 
@@ -252,12 +247,7 @@ internal sealed class FormatMapService : IDisposable
     /// </param>
     private void FormatMapChanged(object sender, EventArgs e)
     {
-        if (!bChangeInProgress)
-        {
-            bChangeInProgress = true;
-            this.UpdateFormatDefinitions();
-            bChangeInProgress = false;
-        }
+        // this.UpdateFormatDefinitions();  // Marius
     }
 
     /// <summary>
@@ -283,16 +273,15 @@ internal sealed class FormatMapService : IDisposable
 
     private void OnViewGotAggregateFocus(object sender, EventArgs e)
     {
-
+/*
         var view = sender as ITextView;
         if (view != null)
         {
             view.GotAggregateFocus -= this.OnViewGotAggregateFocus;
         }
 
-        bChangeInProgress = true;
-        this.UpdateFormatDefinitions();
-        bChangeInProgress = false;
+        this.UpdateFormatDefinitions();     // Marius
+*/
     }
 
     //! Updates a comment's configuration definition.
