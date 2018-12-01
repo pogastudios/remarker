@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="7093519C-CED9-41A9-9D1A-C4EEFDA69192" Version="2.0" Language="en-US" Publisher="Marius Negruțiu" />
+    <Identity Id="7093519C-CED9-41A9-9D1A-C4EEFDA69192" Version="2.1" Language="en-US" Publisher="Marius Negruțiu" />
     <DisplayName>Remarker/Marius</DisplayName>
     <Description xml:space="preserve">Enhance code documentation by enabling resized comment lines</Description>
     <MoreInfo>https://github.com/negrutiu/remarker</MoreInfo>

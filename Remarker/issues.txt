@@ -1,5 +1,8 @@
 ﻿Changelog:
 
+2.1 [Dec 1, 2018] "Remarker/Marius", a fork of the original Remarker. Check out https://github.com/negrutiu/remarker
+  Exclude XML documentation comments (///)
+
 2.0 [Nov 27, 2018] "Remarker/Marius", a fork of the original Remarker. Check out https://github.com/negrutiu/remarker
   Additional work to prevent stack overflows
   Made all the background colors customizable
