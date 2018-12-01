@@ -206,9 +206,13 @@ internal class RemarkTagger : ITagger<ClassificationTag>
         foreach (var currentTagSpan in this.aggregator.GetTags(spans))
         {
             // ######## SECTION SIX
-            if (!currentTagSpan.Tag.ClassificationType.Classification.ToLower()
-                    .Contains("comment"))
+            if (string.Compare(currentTagSpan.Tag.ClassificationType.Classification.ToString(), "Comment", true) != 0)
+            //x if (!currentTagSpan.Tag.ClassificationType.Classification.ToLower().Contains("comment"))
             {
+                // Other comment types:
+                // "XML Doc Comment"               - "/// Comment" in C++ (delimiter + text)
+                // "xml doc comment - delimiter"   - "///"         in C# (delimiter only)
+                // "xml doc comment - text"        - "Comment"     in C# (text only)
                 continue;
             }
 
