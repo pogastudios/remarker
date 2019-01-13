@@ -214,14 +214,14 @@ public static class Definitions
         Definitions.bareCommentPrefix
         + "x" + Definitions.commentPattern + Definitions.bareCommentSuffix;
 
-    private const string bareCommentPrefix = @"|^\s*";
+    private const string bareCommentPrefix = @"|^";
 
     private const string bareCommentSuffix = "$";
 
     private const string commentPattern =
         @"(?<emphasis>-{0,3}|\+{0,3})?\s+(?<comment>.*?)\s*";
 
-    private const string commentPrefixPattern = @"(^\s*(//|'|<!--|/\*|\*)\s*";
+    private const string commentPrefixPattern = @"(^\s*(//|'|<!--|/\*|\*)";
 
     private const string commentSuffixPattern = @"(-->|\*/)?)$";
 

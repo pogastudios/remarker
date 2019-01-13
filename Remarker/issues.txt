@@ -1,15 +1,21 @@
-﻿Changelog:
+﻿
+Changelog:
 
-2.1 [Dec 1, 2018] "Remarker/Marius", a fork of the original Remarker. Check out https://github.com/negrutiu/remarker
+2.2 [Jan 13, 2019] - Remarker/Marius
+  White spaces between comment prefix and emphasis marks are no longer allowed
+  i.e. instead of "// ++ Big comment" you should use "//++ Big comment"
+
+2.1 [Dec 1, 2018] - Remarker/Marius
   Exclude XML documentation comments (///)
 
-2.0 [Nov 27, 2018] "Remarker/Marius", a fork of the original Remarker. Check out https://github.com/negrutiu/remarker
+2.0 [Nov 27, 2018] - Remarker/Marius
   Additional work to prevent stack overflows
   Made all the background colors customizable
   Exposed more settings: Todo, Hack, Question, Bug, Note
   Other minor adjustments
 
-1.5 [Nov 25, 2018] "Remarker/Marius", a fork of the original Remarker. Check out https://github.com/negrutiu/remarker
+1.5 [Nov 25, 2018] - Remarker/Marius
+  "Remarker/Marius" has been forked from the original Remarker. Check out https://github.com/negrutiu/remarker
   Updated to support Visual Studio 2017 (Community, Pro and Enterprise editions)
   Fixed a stack overflow caused by a recursive reaction to our own changes
   Fixed a potential crash caused by corrupted/invalid Remarker settings
