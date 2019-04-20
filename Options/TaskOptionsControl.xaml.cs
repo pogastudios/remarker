@@ -52,7 +52,7 @@
                 strings = version.Split('=');
                 version = strings[1];
 
-                return $"Copyright © Gil Yoder 2014 - Version {version}";
+                return $"Remarker {version}";
             }
         }
 
