@@ -306,20 +306,21 @@ internal class RemarkTagger : ITagger<ClassificationTag>
 
             // ######## SECTION THIRTEEN
             // Get a comment tag.
-            ClassificationTag commentTag = this.remarkerTags[commentTagName];
+            if (this.remarkerTags.TryGetValue(commentTagName, out ClassificationTag commentTag))
+            {
+                // ######## SECTION FOURTEEN
+                // Create a tagSpan with the current values.
+                var span = new SnapshotSpan(snapshotSpan.Snapshot,
+                                            snapshotSpan.Start + start,
+                                            length);
+                var commentTagSpan =
+                    new TagSpan<ClassificationTag>(
+                    span,
+                    commentTag);
 
-            // ######## SECTION FOURTEEN
-            // Create a tagSpan with the current values.
-            var span = new SnapshotSpan(snapshotSpan.Snapshot,
-                                        snapshotSpan.Start + start,
-                                        length);
-            var commentTagSpan =
-                new TagSpan<ClassificationTag>(
-                span,
-                commentTag);
-
-            resultClassificationTags.Add(commentTagSpan);
-            //OnTagsChanged(new SnapshotSpanEventArgs(span));
+                resultClassificationTags.Add(commentTagSpan);
+                //OnTagsChanged(new SnapshotSpanEventArgs(span));
+            }
 
             //++ TaskName section
 
@@ -380,17 +381,13 @@ internal class RemarkTagger : ITagger<ClassificationTag>
 
             // ######### PROCESS FOUND TASKS
 
-            ClassificationTag taskTag = this.remarkerTags[taskClassName];
-
-            span = new SnapshotSpan(snapshotSpan.Snapshot, snapshotSpan.Start + start,
-                                    length);
-            var taskTagSpan =
-                new TagSpan<ClassificationTag>(
-                span,
-                taskTag);
-
-            resultClassificationTags.Add(taskTagSpan);
-            //OnTagsChanged(new SnapshotSpanEventArgs(span));
+            if (this.remarkerTags.TryGetValue( taskClassName, out ClassificationTag taskTag))
+            { 
+                var span = new SnapshotSpan(snapshotSpan.Snapshot, snapshotSpan.Start + start, length);
+                var taskTagSpan = new TagSpan<ClassificationTag>( span, taskTag ); 
+                resultClassificationTags.Add(taskTagSpan);
+                //OnTagsChanged(new SnapshotSpanEventArgs(span));
+            }
         }
 
         return resultClassificationTags;
