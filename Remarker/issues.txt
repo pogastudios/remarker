@@ -1,5 +1,7 @@
 ﻿
 Changelog:
+2.5 [Nov 19, 2021] - Remarker/POGA Interactive
+  Updated to support Visual Studio 2022 (v17.0)
 
 2.4 [Jul 6, 2019] - Remarker/Marius
   Updated to support Visual Studio 2019 (v16.1)
